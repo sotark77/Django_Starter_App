@@ -1,21 +1,21 @@
 #-----STEPS TO USE THE APPLICATION------
 
-Install Python (Obviously)
+1. Install Python (Obviously)
 
-Clone the repository
+2. Clone the repository
 
-Cteare a virtual environment (Windows: py -m venv .venv)
+3. Cteare a virtual environment (Windows: py -m venv .venv)
 
-Activate the virtual environment (Windows: .venv\Scripts\activate) Upgrade pip if needed (Windows: python -m pip install --upgrade pip)
+4. Activate the virtual environment (Windows: .venv\Scripts\activate) Upgrade pip if needed (Windows: python -m pip install --upgrade pip)
 
-Install the requirements in the requirements.txt file (Windows: pip install -r requirements.txt)
+5. Install the requirements in the requirements.txt file (Windows: pip install -r requirements.txt)
 
-Make migrations
+6. Make migrations
 
-Migrate
+7. Migrate
 
-Create a superuser
+8. Create a superuser
 
-Run the server
+9. Run the server
 
-Done. Feel customize application to your needs and liking.
+10. Done. Feel customize application to your needs and liking.
