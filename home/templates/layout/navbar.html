@@ -1,0 +1,37 @@
+{% load static %}
+
+<nav class="sticky top-0 w-screen flex justify-center items-center z-10 h-24">
+  <ul class="flex items-center gap-3 md:gap-8 text-sm py-5 px-3 md:px-8 bg-white/30 dark:bg-neutral-800/30 backdrop-blur-lg rounded-md">
+    
+    <li>
+      <a href="{% url 'home' %}" class="flex items-center gap-2 font-medium text-gray-600 hover:text-gray-700">
+        <i class="ri-home-4-line text-lg"></i> Home
+      </a>
+    </li>
+
+    <li>
+      <a href="#" class="flex items-center gap-2 font-medium text-gray-600 hover:text-gray-700">
+        <i class="ri-information-line text-lg"></i> About
+      </a>
+    </li>
+
+    <li>
+      <a href="{% url 'blogs_list' %}" class="flex items-center gap-2 font-medium text-gray-600 hover:text-gray-700">
+        <i class="ri-article-line text-lg"></i> Blogs
+      </a>
+    </li>
+
+    <li>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}" class="flex items-center gap-2 font-medium text-gray-600 hover:text-gray-700">
+        <i class="ri-logout-box-r-line text-lg"></i> Logout
+      </a>
+      {% else %}
+      <a href="{% url 'login' %}" class="flex items-center gap-2 font-medium text-gray-600 hover:text-gray-700">
+        <i class="ri-login-box-line text-lg"></i> Login
+      </a>
+      {% endif %}
+    </li>
+
+  </ul>
+</nav>

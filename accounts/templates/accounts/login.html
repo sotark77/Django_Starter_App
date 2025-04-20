@@ -1,0 +1,63 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} | Login {% endblock %}
+
+{% block content %}
+
+<!-- Dark Neutral Theme Container -->
+
+<!-- To control the height of the container, use the `min-h-screen` class. Use h-150 as well -->
+<div class="flex items-center justify-center min-h-screen h-150 px-4" id="active-form">
+  <form method="post" 
+    class="w-full max-w-sm relative bg-white/10 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.4)] rounded-[1rem] p-8 overflow-hidden animate-fade-in">
+    
+    {% csrf_token %}
+
+    <!-- Aura Blob Background -->
+    <div class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-tr from-slate-500 to-zinc-400 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+
+    <!-- Header -->
+    <div class="mb-6 text-center">
+      <!-- <h1 class="text-2xl font-bold bg-gradient-to-r from-slate-300 to-zinc-200  bg-clip-text tracking-tight text-gray-800">Login</h1> -->
+      <i class="ri-shield-keyhole-line text-5xl text-gray-800"></i>
+      <!-- <hr class="mt-2 border-t border-gray-500" /> -->
+    </div>
+
+    <!-- Email -->
+    <div class="mb-4">
+      <label for="email" class="block text-sm font-medium text-gray-800 mb-2">Email</label>
+      {{ form.email }}
+    </div>
+
+    <!-- Password -->
+    <div class="mb-4">
+      <label for="password" class="block text-sm font-medium text-gray-800 mb-2">Password</label>
+      {{ form.password }}
+    </div>
+
+    <!-- Remember me + Forgot -->
+    <div class="flex items-center justify-between mb-6">
+      <label class="flex items-center text-sm text-gray-500">
+        <input type="checkbox" class="rounded border-gray-700 bg-gray-800 text-slate-400 focus:ring-slate-400">
+        <span class="ml-2">Remember me</span>
+      </label>
+      <a href="{% url 'reset_password' %}" class="text-sm text-orange-600 hover:text-orange-800 font-medium"
+      >Forgot password?</a>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit"
+      class="w-full bg-gradient-to-br from-slate-600 to-zinc-500 hover:from-slate-500 hover:to-zinc-400 text-white py-2 rounded-xl font-semibold shadow-md transition-all duration-300 hover:-translate-y-0.5">
+      Login
+    </button>
+
+    <!-- Signup Link -->
+    <div class="mt-6 text-center text-sm text-gray-500">
+      Don’t have an account?
+      <a href="{% url 'register' %}" class="text-orange-600 hover:text-orange-800 font-medium">Sign up</a>
+    </div>
+  </form>
+</div>
+
+
+{% endblock %}

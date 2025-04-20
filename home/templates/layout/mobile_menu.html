@@ -1,0 +1,68 @@
+<div 
+  x-data="{ open: false }" 
+  class="fixed bottom-4 start-4 z-50"
+>
+  <!-- Avatar Toggle Button -->
+  <div 
+    @click="open = !open"
+    class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-400 shadow-lg cursor-pointer hover:scale-105 transition opacity-80 hover:opacity-100"
+  >
+    <img src="{{ user.avatar.url }}" alt="{{ user.first_name }}" class="w-full h-full object-contain object-center" />
+  </div>
+
+  <!-- Transparent Menu Toast with Slide-in -->
+  <div 
+    x-show="open"
+    x-transition:enter="transition ease-out duration-500"
+    x-transition:enter-start="opacity-0 translate-y-5"
+    x-transition:enter-end="opacity-90 translate-y-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-90 translate-y-0"
+    x-transition:leave-end="opacity-0 translate-y-5"
+    class="max-w-xs bg-neutral-800/20 backdrop-blur-md rounded-xl shadow-lg fixed bottom-20 start-6 z-50 pointer-events-auto"
+    @click.outside="open = false"
+    role="alert" 
+    tabindex="-1" 
+    aria-labelledby="mobile-menu"
+>
+    <div class="flex p-4">
+      <div class="ms-3">
+        <div id="mobile-menu" class="font-normal space-y-2 text-gray-600 hover:text-gray-700">
+
+          <!-- Home -->
+          <div>
+            <a href="{% url 'home' %}" class="flex items-center px-3 py-2 rounded hover:bg-white/20 transition">
+              <i class="ri-home-line me-2"></i>
+              Home
+            </a>
+          </div>
+
+          <!-- Dashboard -->
+          <div>
+            <a href="#" class="flex items-center px-3 py-2 rounded hover:bg-white/10 transition">
+              <i class="ri-layout-4-line me-2"></i>
+              Create Post
+            </a>
+          </div>
+
+          <!-- Profile -->
+          <div>
+            <a href="{% url 'profile' %}" class="flex items-center px-3 py-2 rounded hover:bg-white/10 transition">
+              <i class="ri-user-line me-2"></i>
+              Profile
+            </a>
+          </div>
+
+          <!-- Logout -->
+          <div>
+            <a href="{% url 'logout' %}" class="flex items-center px-3 py-2 rounded hover:bg-white/10 transition">
+              <i class="ri-logout-box-line me-2"></i>
+              Logout
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

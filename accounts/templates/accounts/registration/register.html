@@ -1,0 +1,68 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} | Register {% endblock %}
+
+{% block content %}
+
+<div class="flex items-center justify-center min-h-screen px-4">
+
+  <form method="post" autocomplete="off"
+    class="w-full max-w-md relative bg-white/10 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.4)] rounded-[1rem] p-8 overflow-hidden animate-fade-in">
+    {% csrf_token %}
+    <!-- Aura Blob -->
+    <div class="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-tr from-slate-500 to-zinc-400 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+    <!-- Header -->
+    <div class="mb-6 text-center">
+      <i class="ri-sticky-note-add-line text-5xl text-gray-800"></i>
+      <!-- <h1 class="text-2xl font-extrabold bg-gradient-to-r from-slate-300 to-zinc-200 text-transparent bg-clip-text tracking-tight">Sign up</h1>
+      <hr class="mt-2 border-t border-white/20" /> -->
+    </div>
+    <!-- First & Last Name -->
+    <div class="mb-4 sm:mb-6 flex gap-4">
+      <div class="w-1/2">
+        <label class="block text-sm font-medium text-gray-800 mb-2" for="first-name">First Name</label>
+        {{ form.first_name }}
+      </div>
+      <div class="w-1/2">
+        <label class="block text-sm font-medium text-gray-800 mb-2" for="last-name">Last Name</label>
+        {{ form.last_name }}
+      </div>
+    </div>
+    <!-- Email & Username -->
+    <div class="mb-4 sm:mb-6 flex gap-4">
+      <div class="w-1/2">
+        <label class="block text-sm font-medium text-gray-800 mb-2" for="email">Email</label>
+        {{ form.email }}
+        <p class="text-gray-500 text-xs mt-1">Login with email</p>
+      </div>
+      <div class="w-1/2">
+        <label class="block text-sm font-medium text-gray-800 mb-2" for="user_name">Username</label>
+        {{ form.user_name }}
+      </div>
+    </div>
+    <!-- Password -->
+    <div class="mb-4 sm:mb-6">
+      <label class="block text-sm font-medium text-gray-800 mb-2" for="password1">Password</label>
+      {{ form.password1 }}
+      <p class="text-gray-500 text-xs mt-1">Password must be at least 8 characters. Your password can’t be entirely numeric. Can’t be too similar to your other personal information</p>
+    </div>
+    <!-- Confirm Password -->
+    <div class="mb-4 sm:mb-6">
+      <label class="block text-sm font-medium text-gray-800 mb-2" for="password2">Confirm Password</label>
+      {{ form.password2 }}
+    </div>
+    <!-- Register Button -->
+    <button type="submit"
+      class="w-full bg-gradient-to-br from-slate-600 to-zinc-500 hover:from-slate-500 hover:to-zinc-400 text-white py-2 rounded-xl font-semibold shadow-md transition-all duration-300 hover:-translate-y-0.5">
+      Register
+    </button>
+    <!-- Link to Login -->
+    <div class="mt-6 text-center text-sm text-gray-500">
+      Already have an account?
+      <a href="{% url 'login' %}" class="text-orange-600 hover:text-orange-800 font-medium">Login</a>
+    </div>
+  </form>
+</div>
+
+
+{% endblock %}

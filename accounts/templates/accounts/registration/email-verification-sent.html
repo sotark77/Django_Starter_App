@@ -1,0 +1,21 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block title%} | Email Sent {% endblock %}
+
+{% block content %}
+
+<div class="flex items-center justify-center min-h-screen px-4 bg-gradient-to-br">
+  <form class="w-full max-w-sm relative bg-white/30 backdrop-blur-xl border border-white/20 shadow-[0_8px_30px_rgba(0,0,0,0.12)] rounded-[2rem] p-8 overflow-hidden animate-fade-in">
+    <div class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-tr from-indigo-400 to-purple-500 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+
+    <div class="text-3xl mb-3 text-center text-green-600">
+      <i class="ri-mail-send-fill"></i>
+    </div>
+    <p class="text-md mb-6 text-center text-gray-700">Verification link was sent to your email. Check your inbox or spam folder.</p>
+  </form>
+</div>
+
+
+{% endblock %}
